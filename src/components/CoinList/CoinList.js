@@ -19,10 +19,14 @@ const CoinList = () => {
   return (
     <div>
       {coinData.map((val, id) => {
-        const { login, avatar_url, type, name } = val;
+        const { image, current_price, name, market_cap_rank, symbol } = val;
         return (
           <div key={id}>
+            #{market_cap_rank}
+            <img src={image} alt={name} style={{ width: 80, height: 80 }} />
             <p>{name}</p>
+            <span>{symbol}</span>
+            <p>{current_price}</p>
           </div>
         );
       })}
