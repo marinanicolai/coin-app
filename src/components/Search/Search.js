@@ -32,12 +32,17 @@ const Search = () => {
       .catch((err) => console.log(err));
   }, []);
   console.log(search.name);
-  console.log(allRecords);
 
   return (
     <div>
-      <input />
-      <button onClick={() => {}}>Search </button>
+      <input onChange={(e) => setInput(e.target.value)} />
+      <button
+        onClick={() => {
+          searchRecord(input);
+        }}
+      >
+        Search{" "}
+      </button>
     </div>
   );
 };
